@@ -1,7 +1,7 @@
-# PHP with MySQL support
+# PHP with MySQL support and additional modules for use with Wordpress
 
-Stack of nginx web and PHP fpm servers for running PHP web applications with
-MySQL support.
+Stack of nginx web and PHP fpm servers for running Wordpress. This image doesn't
+contain Wordpress itself, just PHP fpm incl. MySQL and other modules and nginx.
 
 See also the [base image](https://hub.docker.com/r/simonrupf/php/dockerfile).
 

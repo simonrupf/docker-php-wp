@@ -1,6 +1,6 @@
 .PHONY: build run test exec sh clean help all
 
-NAME = php-mysql
+NAME = php-wp
 IMAGE = simonrupf/$(NAME)
 PORT = 8080
 CMD = /bin/ash
