@@ -3,6 +3,8 @@
 Stack of nginx web and PHP fpm servers for running Wordpress. This image doesn't
 contain Wordpress itself, just PHP fpm incl. MySQL and other modules and nginx.
 
+For best performance, install and enable the WP Super Cache plugin.
+
 See also the [base image](https://hub.docker.com/r/simonrupf/php/dockerfile).
 
 ## Environment variables
@@ -28,7 +30,7 @@ files that should not be directly accessible for security reasons.
 - `/run`: PID files and sockets
 - `/tmp`: temporary data of PHP (i.e. sessions) and supervisord
 - `/var/tmp/nginx`: temporary data of nginx (i.e. uploads, large responses)
-- `/var/www/public` or `/var/www`: contents of your PHP application - owner 101, group 82, mode 0750
+- `/var/www/public` or `/var/www`: contents of your PHP application - owner 100, group 82, mode 0750
 
 ## Network ports
 

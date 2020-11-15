@@ -14,7 +14,8 @@ run: ## Run a container from the image.
 test: ## Launch tests to verify that the service works as expected, requires a running container.
 	@sleep 1
 	nc -z localhost $(PORT)
-	curl -s http://localhost:$(PORT)/ | grep "File not found"
+	curl -s http://localhost:$(PORT)/
+	curl -s http://localhost:$(PORT)/nope | grep "500 Internal Server Error"
 
 exec: ## Execute a shell in the running container for inspection, requires a running container.
 	docker exec -ti $(NAME) $(CMD)
