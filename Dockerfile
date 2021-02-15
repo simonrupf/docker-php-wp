@@ -1,19 +1,19 @@
-FROM simonrupf/php:0.1.8
+FROM simonrupf/php:0.2.0
 USER 0:0
 RUN apk add --no-cache \
-    php7-curl \
-    php7-dom \
-    php7-exif \
-    php7-fileinfo \
-    php7-iconv \
-    php7-json \
-    php7-mbstring \
-    php7-mysqli \
-    php7-openssl \
-    php7-pecl-imagick \
-    php7-sodium \
-    php7-xml \
-    php7-zip
+    php8-curl \
+    php8-dom \
+    php8-exif \
+    php8-fileinfo \
+    php8-iconv \
+    php8-json \
+    php8-mbstring \
+    php8-mysqli \
+    php8-openssl \
+    php8-pecl-imagick \
+    php8-sodium \
+    php8-xml \
+    php8-zip
 RUN sed -i '/try_files/d' /etc/nginx/nginx.conf && \
     mkdir /var/www/public && \
     touch /var/www/public/index.html
