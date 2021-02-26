@@ -1,4 +1,8 @@
-# PHP change log
+# PHP for Wordpress change log
+
+## 0.2.1
+
+add API nginx tuning
 
 ## 0.2.0
 
