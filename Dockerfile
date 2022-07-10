@@ -6,6 +6,7 @@ RUN apk add --no-cache \
     php81-exif \
     php81-fileinfo \
     php81-iconv \
+    php81-intl \
     php81-json \
     php81-mbstring \
     php81-mysqli \

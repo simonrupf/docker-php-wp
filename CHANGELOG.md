@@ -1,5 +1,9 @@
 # PHP for Wordpress change log
 
+## 0.3.2
+
+add php intl module, recommended by Wordpress 6.0
+
 ## 0.3.1
 
 update to Alpine 3.16 / php 8.1.6 / nginx 1.22.0 / s6 2.11.1.0
