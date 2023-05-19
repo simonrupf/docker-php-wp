@@ -1,5 +1,9 @@
 # PHP for Wordpress change log
 
+## 0.4.0
+
+update to Alpine 3.18 / php 8.2.6 / nginx 1.24.0 / s6 2.11.3.2
+
 ## 0.3.3
 
 update to Alpine 3.17 / php 8.1.13 / nginx 1.22.1 / s6 2.11.1.2 / openssl 3.0.7

@@ -1,20 +1,20 @@
-FROM simonrupf/php:0.3.2
+FROM simonrupf/php:0.4.1
 USER 0:0
 RUN apk add --no-cache \
-    php81-curl \
-    php81-dom \
-    php81-exif \
-    php81-fileinfo \
-    php81-iconv \
-    php81-intl \
-    php81-json \
-    php81-mbstring \
-    php81-mysqli \
-    php81-openssl \
-    php81-pecl-imagick \
-    php81-sodium \
-    php81-xml \
-    php81-zip
+    php82-curl \
+    php82-dom \
+    php82-exif \
+    php82-fileinfo \
+    php82-iconv \
+    php82-intl \
+    php82-json \
+    php82-mbstring \
+    php82-mysqli \
+    php82-openssl \
+    php82-pecl-imagick \
+    php82-sodium \
+    php82-xml \
+    php82-zip
 RUN sed -i '/try_files/d' /etc/nginx/nginx.conf && \
     mkdir /var/www/public && \
     touch /var/www/public/index.html
