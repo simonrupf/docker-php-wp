@@ -1,0 +1,137 @@
+{
+    "listeners": {
+        "*:8080": {
+            "pass": "routes"
+        },
+        "[::]:8080": {
+            "pass": "routes"
+        }
+    },
+    "routes": [
+        {
+            "match": {
+                "uri": [
+                    "/favicon.ico",
+                    "/robots.txt",
+                    "*.(ogg|ogv|svg|svgz|eot|otf|woff|mp4|ttf|css|rss|atom|js|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf)"
+                ]
+            },
+            "action": {
+                "share": "/var/www/public${uri}"
+            }
+        },
+        {
+            "match": {
+                "cookies": [
+                    {"comment_author": "*"},
+                    {"wordpress_*": "*"},
+                    {"wordpress_logged_in": "*"},
+                    {"wp-postpass": "*"}
+                ]
+            },
+            "action": {
+                "pass": "applications/php/direct"
+            }
+        },
+        {
+            "match": {
+                "method": "POST"
+            },
+            "action": {
+                "pass": "applications/php/direct"
+            }
+        },
+        {
+            "match": {
+                "query": "!"
+            },
+            "action": {
+                "pass": "applications/php/direct"
+            }
+        },
+        {
+            "match": {
+                "uri": [
+                    "*.php",
+                    "*.php/*",
+                    "*sitemap*.xml",
+                    "/feed/",
+                    "/wp-admin/"
+                ]
+            },
+            "action": {
+                "pass": "applications/php/direct"
+            }
+        },
+        {
+            "match": {
+                "uri": "/wp-json/"
+            },
+            "action": {
+                "rewrite": "/?rest_route=$request_uri",
+                "pass": "applications/php/index"
+            }
+        },
+        {
+            "action": {
+                "share": [
+                    "/var/www/public/wp-content/cache/supercache/${host}/${uri}index-https.html",
+                    "/var/www/public/wp-content/cache/supercache/${host}/${uri}index.html",
+                    "/var/www/public${uri}"
+                ],
+                "fallback": {
+                    "pass": "applications/php/index"
+                }
+            }
+        }
+    ],
+    "applications": {
+        "php": {
+            "type": "php",
+            "options": {
+                "file": "/etc/php84/php.ini",
+                "admin": {
+                    "display_errors": "Off",
+                    "log_errors": "On",
+                    "short_open_tag": "Off",
+                    "expose_php": "Off",
+                    "error_reporting": "-1",
+                    "opcache.interned_strings_buffer": "8",
+                    "opcache.max_accelerated_files": "20000",
+                    "opcache.memory_consumption": "128",
+                    "opcache.validate_timestamps": "Off",
+                    "realpath_cache_size": "4096K",
+                    "zend.assertions": "-1"
+                }
+            },
+            "processes": {
+                "max": 5,
+                "spare": 2,
+                "idle_timeout": 35
+            },
+            "targets": {
+                "direct": {
+                    "root": "/var/www/public/"
+                },
+                "index": {
+                    "root": "/var/www/public/",
+                    "script": "index.php"
+                }
+            }
+        }
+    },
+    "settings": {
+        "http": {
+            "static": {
+                "mime_types": {
+                    "application/wasm": [".wasm"],
+                    "application/x-shockwave-flash": [".swf"]
+                }
+            }
+        }
+    },
+    "access_log": {
+        "path": "/dev/stdout",
+        "format": "$remote_addr - - [$time_local] \"$request_line\" $status $body_bytes_sent \"$header_referer\" \"$header_user_agent\" \"$header_x_forwarded_for\""
+    }
+}

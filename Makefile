@@ -15,7 +15,7 @@ test: ## Launch tests to verify that the service works as expected, requires a r
 	@sleep 1
 	nc -z localhost $(PORT)
 	curl -s http://localhost:$(PORT)/
-	curl -s http://localhost:$(PORT)/nope | grep -q "500 Internal Server Error"
+	curl -s -D - -o /dev/null http://localhost:$(PORT)/nope.php | grep -q "404 Not Found"
 
 exec: ## Execute a shell in the running container for inspection, requires a running container.
 	docker exec -ti $(NAME) $(CMD)

@@ -1,5 +1,9 @@
 # PHP for Wordpress change log
 
+## 0.5.0
+
+update to Alpine 3.23 / php 8.4.15
+
 ## 0.4.0
 
 update to Alpine 3.18 / php 8.2.6 / nginx 1.24.0 / s6 2.11.3.2
@@ -52,4 +56,3 @@ add WP Super Cache nginx tuning
 ## 0.1.0
 
 prepare for wordpress
-

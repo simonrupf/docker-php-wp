@@ -1,23 +1,23 @@
-FROM simonrupf/php:0.4.1
+FROM simonrupf/php:0.5.8
 USER 0:0
 RUN apk add --no-cache \
-    php82-curl \
-    php82-dom \
-    php82-exif \
-    php82-fileinfo \
-    php82-iconv \
-    php82-intl \
-    php82-json \
-    php82-mbstring \
-    php82-mysqli \
-    php82-openssl \
-    php82-pecl-imagick \
-    php82-sodium \
-    php82-xml \
-    php82-zip
-RUN sed -i '/try_files/d' /etc/nginx/nginx.conf && \
-    mkdir /var/www/public && \
-    touch /var/www/public/index.html
-COPY etc /etc
+    php84-curl \
+    php84-dom \
+    php84-exif \
+    php84-fileinfo \
+    php84-iconv \
+    php84-intl \
+    php84-json \
+    php84-mbstring \
+    php84-mysqli \
+    php84-openssl \
+    php84-pecl-imagick \
+    php84-sodium \
+    php84-xml \
+    php84-zip
+RUN touch /var/www/public/index.php
 # user nginx, group www-data
-USER 100:82
+ARG UID=100
+ARG GID=82
+COPY --chown=${UID}:${GID} conf.json /var/lib/unit/
+USER ${UID}:${GID}
