@@ -64,15 +64,6 @@
             }
         },
         {
-            "match": {
-                "uri": "/wp-json/"
-            },
-            "action": {
-                "rewrite": "/?rest_route=$request_uri",
-                "pass": "applications/php/index"
-            }
-        },
-        {
             "action": {
                 "share": [
                     "/var/www/public/wp-content/cache/supercache/${host}/${uri}index-https.html",

@@ -1,5 +1,9 @@
 # PHP for Wordpress change log
 
+## 0.5.1
+
+drop rewriting of /wp-json/ endpoint
+
 ## 0.5.0
 
 update to Alpine 3.23 / php 8.4.15
