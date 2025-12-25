@@ -1,5 +1,9 @@
 # PHP for Wordpress change log
 
+## 0.5.2
+
+optimize order of routes
+
 ## 0.5.1
 
 drop rewriting of /wp-json/ endpoint

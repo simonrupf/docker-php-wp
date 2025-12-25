@@ -22,6 +22,29 @@
         },
         {
             "match": {
+                "uri": [
+                    "*.php",
+                    "*.php/*",
+                    "/wp-admin/"
+                ]
+            },
+            "action": {
+                "pass": "applications/php/direct"
+            }
+        },
+        {
+            "match": {
+                "uri": [
+                    "*sitemap*.xml",
+                    "/feed/"
+                ]
+            },
+            "action": {
+                "pass": "applications/php/index"
+            }
+        },
+        {
+            "match": {
                 "cookies": [
                     {"comment_author": "*"},
                     {"wordpress_*": "*"},
@@ -46,21 +69,7 @@
                 "query": "!"
             },
             "action": {
-                "pass": "applications/php/direct"
-            }
-        },
-        {
-            "match": {
-                "uri": [
-                    "*.php",
-                    "*.php/*",
-                    "*sitemap*.xml",
-                    "/feed/",
-                    "/wp-admin/"
-                ]
-            },
-            "action": {
-                "pass": "applications/php/direct"
+                "pass": "applications/php/index"
             }
         },
         {
