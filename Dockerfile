@@ -1,20 +1,20 @@
 FROM simonrupf/php:0.5.9
 USER 0:0
 RUN apk add --no-cache \
-    php84-curl \
-    php84-dom \
-    php84-exif \
-    php84-fileinfo \
-    php84-iconv \
-    php84-intl \
-    php84-json \
-    php84-mbstring \
-    php84-mysqli \
-    php84-openssl \
-    php84-pecl-imagick \
-    php84-sodium \
-    php84-xml \
-    php84-zip
+    php85-curl \
+    php85-dom \
+    php85-exif \
+    php85-fileinfo \
+    php85-iconv \
+    php85-intl \
+    php85-json \
+    php85-mbstring \
+    php85-mysqli \
+    php85-openssl \
+    php85-pecl-imagick \
+    php85-sodium \
+    php85-xml \
+    php85-zip
 RUN touch /var/www/public/index.php
 # user nginx, group www-data
 ARG UID=100

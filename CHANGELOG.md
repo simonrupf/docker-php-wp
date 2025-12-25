@@ -1,5 +1,9 @@
 # PHP for Wordpress change log
 
+## 0.5.4
+
+update to php 8.5.0 - opcache is now a required extension and always included
+
 ## 0.5.3
 
 drop treating GET parameters differently, they are also used in static files as cache breakers
