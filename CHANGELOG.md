@@ -1,5 +1,9 @@
 # PHP for Wordpress change log
 
+## 0.5.3
+
+drop treating GET parameters differently, they are also used in static files as cache breakers
+
 ## 0.5.2
 
 optimize order of routes
