@@ -1,6 +1,6 @@
 # PHP with MySQL support and additional modules for use with Wordpress
 
-Nginx unit application server for running Wordpress. This image doesn't
+FreeUnit application server for running Wordpress. This image doesn't
 contain Wordpress itself, just PHP incl. MySQL and other modules and nginx unit.
 
 For best performance, install and enable the WP Super Cache plugin.
@@ -29,7 +29,7 @@ files that should not be directly accessible for security reasons.
 
 - `/run`: PID files and sockets
 - `/tmp`: temporary data of PHP (i.e. sessions)
-- `/var/lib/unit`: temporary data of nginx unit (i.e. uploads, large responses)
+- `/var/lib/unit`: temporary data of FreeUnit (i.e. uploads, large responses)
 - `/var/www/public` or `/var/www`: contents of your PHP application - owner 100,
   group 82, mode 0750
 

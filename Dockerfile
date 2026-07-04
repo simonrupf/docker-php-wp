@@ -1,4 +1,4 @@
-FROM simonrupf/php:0.5.9
+FROM simonrupf/php:0.6.0
 USER 0:0
 RUN apk add --no-cache \
     php85-curl \
